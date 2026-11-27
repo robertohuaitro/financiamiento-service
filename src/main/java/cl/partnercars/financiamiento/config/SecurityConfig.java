@@ -32,6 +32,7 @@ public class SecurityConfig {
                 .sessionManagement(sesion -> sesion.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(rutas -> rutas
                         .dispatcherTypeMatchers(DispatcherType.ERROR).permitAll()
+                        .requestMatchers(HttpMethod.GET, "/actuator/health/**", "/actuator/info").permitAll()
                         .requestMatchers(HttpMethod.GET, "/entidades-financieras/**").permitAll()
                         .requestMatchers(HttpMethod.POST, "/solicitudes").permitAll()
                         .anyRequest().hasRole("ADMIN"))
