@@ -1,0 +1,14 @@
+target/
+.git/
+.github/
+.idea/
+.vscode/
+*.iml
+.mvn/
+mvnw
+mvnw.cmd
+src/test/
+postman/
+docker/
+*.md
+*.log
